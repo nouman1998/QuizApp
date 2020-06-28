@@ -1,0 +1,38 @@
+.font-design{
+    font-size: xx-large;
+    margin-bottom: 10px;
+}
+
+.box{
+    /* margin-top: 10px;
+    margin-left: 10px; */
+    width: 800px;
+    height: 800px;
+ 
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+   
+}
+.Question
+{
+    font-weight: bolder;
+    color: black;
+    font-size: large;
+    text-align: justify;
+}
+
+.Answer{
+    margin-top: 60px;
+}
+
+.myClass{
+    background-color: black;
+    color :white;
+    border:1px solid black ;border-radius: 8px;  width: 200px; height: 30px; text-align: center; padding: 5px; font-weight: 500;
+    
+    
+}
+.abc{
+    border:1px solid black ;border-radius: 8px; background-color: rgb(209, 204, 204); width: 200px; height: 30px; text-align: center; padding: 5px;color:black; font-weight: 500;
+}

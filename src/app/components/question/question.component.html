@@ -1,0 +1,67 @@
+<div class="box">
+
+    <div class="font-design">Question {{i+1}} of {{questions.length}}</div>
+    <span nz-typography nzType="secondary" class="category" >{{questions[i].category}}</span>
+    <br>
+    <i *ngIf="!firstStar" nz-icon nzType="star" nzTheme="outline"></i>
+    <i *ngIf="firstStar" nz-icon nzType="star" nzTheme="fill"></i>
+
+    <i *ngIf="!secondStar" nz-icon nzType="star" nzTheme="outline"></i>
+    <i *ngIf="secondStar"  nz-icon nzType="star" nzTheme="fill"></i>
+    <i *ngIf="!thirdStar"  nz-icon nzType="star" nzTheme="outline"></i>
+    <i *ngIf="thirdStar"  nz-icon nzType="star" nzTheme="fill"></i>
+
+
+
+    
+    <div class="Question" style="margin-top: 40px;">
+        {{questions[i].question}}
+    </div>
+
+
+    <div class="Answer">
+        <div nz-row>
+            <button *ngIf="!flag" nz-col (click)="correctAnswer()" #correct nzSpan="9" class="abc">
+                {{questions[i].correct_answer}}
+            </button>
+            <button [disabled]="true" *ngIf="flag" nz-col #correct nzSpan="9" class="myClass">
+                {{questions[i].correct_answer}}
+            </button>
+            <button [disabled]="wrong1" (click)="wrongAnswer('0')" nz-col nzOffset="4" nzSpan="9"
+                style="border:1px solid black ;border-radius: 8px; background-color: rgb(209, 204, 204); width: 200px; height: 30px; text-align: center; padding: 5px; color:black; font-weight: 500;">
+                {{questions[i].incorrect_answers[0]}}
+            </button>
+        </div>
+        <div nz-row style="margin-top: 20px;">
+            <button *ngIf="questions[i].incorrect_answers[1]" [disabled]="wrong2" (click)="wrongAnswer('1')" nz-col nzSpan="9"
+                style="border:1px solid black ;border-radius: 8px; background-color: rgb(209, 204, 204); width: 200px; height: 30px; text-align: center; padding: 5px;color:black; font-weight: 500;">
+                {{questions[i].incorrect_answers[1]}}
+            </button>
+            <button *ngIf="questions[i].incorrect_answers[2]" [disabled]="wrong3" (click)="wrongAnswer('2')" nz-col nzOffset="4" nzSpan="9"
+                style="border:1px solid black ; border-radius: 8px; background-color: rgb(209, 204, 204); width: 200px; height: 30px; text-align: center; padding: 5px; color:black; font-weight: 500;">
+                {{questions[i].incorrect_answers[2]}}
+        </button>
+        </div>
+
+    </div>
+
+    <div *ngIf="questionAnsweredCorrect"
+        style="text-align: center; margin-top: 60px; font-weight: 500; font-size: 30px; color: black;">
+        Correct!
+    </div>
+    <div *ngIf="questionAnsweredWrong"
+        style="text-align: center; margin-top: 60px; font-weight: 500; font-size: 30px; color: black;">
+        Sorry!
+    </div>
+    <div style="margin-left:38% ; margin-top:20px">
+        <div (click)="nextQuestion()" *ngIf="questionAnswered" nz-col nzSpan="9"
+            style="border-radius: 8px; background-color: rgb(209, 204, 204); width: 250px; height: 40px; text-align: center; padding: 9px; color:black; font-weight: 500; border:1px solid black ">
+            Next Question
+        </div>
+
+    </div>
+
+
+
+
+</div>
