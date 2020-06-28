@@ -7,7 +7,7 @@ app.use(express.static(  './dist/quiz-app'));
 
 // Send all requests to index.html
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname ,'/dist/quiz-app/index.html'));
+  res.sendFile(path.join('index.html', { root: 'dist/project-name'} ));
 });
 
 // default Heroku PORT
